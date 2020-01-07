@@ -1,6 +1,7 @@
 import eel, random
 from tkinter import *
 
+
 eel.init('web')
 
 master = Tk()
