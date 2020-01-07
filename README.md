@@ -1,2 +1,2 @@
-# Good_Nuit-Python-GUI-
-Python GUI APP
+# Good_Nuit-Sort Visualizer
+Sorting Visualizer using Javascript
