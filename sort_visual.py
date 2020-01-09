@@ -1,29 +1,33 @@
-import eel, random
-from tkinter import *
-
+import eel
+import sys
 
 eel.init('web')
 
-master = Tk()
+@eel.expose
+def merge_sort(A):
+    merge_sort2(A, 0, len(A)-1)
 
-w = Canvas(master, width=40, height=60)
-w.pack()
+def merge_sort2(A, first, last):
+	if first < last:
+		middle = (first + last)//2
+		merge_sort2(A, first, middle)
+		merge_sort2(A, middle+1, last)
+		merge(A, first, middle, last)
 
-canvas_height=20
-canvas_width=200
+def merge(A, first, middle, last):
+	L = A[first:middle+1]
+	R = A[middle+1:last+1]
+	L.append(sys.maxsize)
+	R.append(sys.maxsize)
+	i = j = 0
 
-y= int(canvas_height / 2)
-w.create_line(0,y,canvas_width,y)
-mainloop()
+	
+	for k in range (first, last+1):
+		if L[i] <= R[j]:
+			A[k] = L[i]
+			i += 1
+		else:
+			A[k] = R[j]
+			j += 1
 
-
-# m =tk.Tk()
-# m.title('Sort')
-# button = tk.Button(m, text='Test', width=25, command=m.destroy)
-# button.pack()
-# m.mainloop()
-
-
-
-# @eel.expose
-# def setup:
+eel.start('index.html') 
