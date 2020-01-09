@@ -1,7 +1,7 @@
 <br><br>
 
 <p align="center">
-<a href="https://github.com/alexisveryreal"><img width="fit" src="./web/images/night.jpg" alt="night logo"></a>
+<a href="https://github.com/alexisveryreal"><img width="fit" src="./src/web/images/night.jpg" alt="night logo"></a>
 <br>
 
 </p>
