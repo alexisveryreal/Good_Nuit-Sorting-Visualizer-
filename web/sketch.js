@@ -13,19 +13,25 @@ let selType, inpNum;
 
 function setup(){
 
+    selType = createSelect();
+    selType.position(10,10);
+    selType.option('MergeSort');
+
     inpNum = createInput('200');
     inpNum.position(10, 30);
     inpNum.input(function() {
         numLines = inpNum.value();
         resetArray();
-    })
+    });
 
+    button = createButton('Restart');
+    button.position(10,50);
+    button.mousePressed(resetArray);
+    
 
     createCanvas(windowWidth, windowHeight);
     colorMode(HSB, height);
-    for(i = 0; i < numLines; i++){
-        values[i] = random(height);
-    }
+    resetArray();
 }
 
 function draw(){
@@ -34,16 +40,15 @@ function draw(){
     for(i = 0; i < values.length; i++){
         let col = color(values[i], height, height);
         let location = map(i, 0, values.length, 0, width);
-        stroke(col);
-        if(lines) {
-            line(location, height, location, height - values[i]);
-        } else {
-            if (cycles <= 10) noStroke();
-            fill(col);
-            rect(location, height-values[i], width/numLines, height);
+        colorMode(RGB);
+        switch(i) {
+            default:
+                stroke(col);
+                fill(col);
         }
+        colorMode(HSB, height);
+        rect(location, height-values[i], width/numLines, height);
     }
-
 }
 
 resetArray = function(){
