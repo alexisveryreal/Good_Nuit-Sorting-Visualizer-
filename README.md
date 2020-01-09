@@ -1,10 +1,11 @@
 <br><br>
 
 <p align="center">
-<a href="https://github.com/alexisveryreal"><img width="fit" src="./web/images/night.jpg" alt="night logo">
+<a href="https://github.com/alexisveryreal"><img width="fit" src="./web/images/night.jpg" alt="night logo"></a>
 <br>
 
 </p>
+<br>
 <br><br>
 
 # Good_Nuit-Sort Visualizer
