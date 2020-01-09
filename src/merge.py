@@ -28,7 +28,7 @@ def merge(A, first, middle, last):
 			A[k] = R[j]
 			j += 1
 			
-A = [5,9,1,2,4,8,6,3,7]
-print(A)
-merge_sort(A)
-print(A)
+# A = [5,9,1,2,4,8,6,3,7]
+# print(A)
+# merge_sort(A)
+# print(A)

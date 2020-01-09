@@ -12,7 +12,7 @@ def selection_sort(A):
             A[i], A[minIndex] = A[minIndex], A[i]
 
 
-A = [5,9,1,2,4,8,6,3,7]
-print(A)
-selection_sort(A)
-print(A)
+# A = [5,9,1,2,4,8,6,3,7]
+# print(A)
+# selection_sort(A)
+# print(A)

@@ -11,7 +11,7 @@ def bubble_sort(A):
         if done:
             return
 
-A = [5,9,1,2,4,8,6,3,7]
-print(A)
-bubble_sort(A)
-print(A)
+# A = [5,9,1,2,4,8,6,3,7]
+# print(A)
+# bubble_sort(A)
+# print(A)

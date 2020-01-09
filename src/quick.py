@@ -22,8 +22,8 @@ def quicksort(keep, low, high):
         quicksort(keep, low, p-1)
         quicksort(keep, p+1, high)
 
-Array= [0,5,9,1,2,4,8,6,3,7]
-print(Array)
-quicksort(Array, 0, 9)
-print(Array)
+# Array= [0,5,9,1,2,4,8,6,3,7]
+# print(Array)
+# quicksort(Array, 0, 9)
+# print(Array)
 

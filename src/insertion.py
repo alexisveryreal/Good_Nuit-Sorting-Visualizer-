@@ -16,7 +16,7 @@ def insertion_sort(A):
                 break
         A[k+1] = curNumber
 
-A = [5,9,1,2,4,8,6,3,7]
-print(A)
-insertion_sort(A)
-print(A)
+# A = [5,9,1,2,4,8,6,3,7]
+# print(A)
+# insertion_sort(A)
+# print(A)
