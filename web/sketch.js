@@ -37,6 +37,17 @@ function setup(){
 function draw(){
     background(0);
 
+    if (!finished){
+        switch(selType.value()){
+            case 'MergeSort':
+                eel.merge_sort(values)();
+                break; 
+        }
+    } else {
+        console.log("finished");
+        noLoop();
+    }
+
     for(i = 0; i < values.length; i++){
         let col = color(values[i], height, height);
         let location = map(i, 0, values.length, 0, width);
