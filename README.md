@@ -20,7 +20,8 @@ What things you need to install the software and how to install them
 Python Eel
 
 ```
-import eel
+pip install eel (in your terminal)
+import eel (in your python file)
 ```
 
 p5.js
