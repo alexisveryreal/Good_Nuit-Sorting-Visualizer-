@@ -3,11 +3,24 @@
 let values = [];
 let loops = 0;
 let swaps = 0;
-let cycles = 0;
+let cycles = 1;
 let lines = false;
 let numLines = 200;
+let finished = false;
+let button;
+let selType, inpNum;
+
 
 function setup(){
+
+    inpNum = createInput('200');
+    inpNum.position(10, 30);
+    inpNum.input(function() {
+        numLines = inpNum.value();
+        resetArray();
+    })
+
+
     createCanvas(windowWidth, windowHeight);
     colorMode(HSB, height);
     for(i = 0; i < numLines; i++){
@@ -31,4 +44,15 @@ function draw(){
         }
     }
 
+}
+
+resetArray = function(){
+    console.log('resetting')
+    values = [];
+    for(i = 0; i < numLines; i++){
+        values[i] = random(height);
+    }
+    loops= 0;
+    swaps = 0;
+    loop();
 }
