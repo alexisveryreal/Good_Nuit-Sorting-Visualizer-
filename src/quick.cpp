@@ -14,14 +14,14 @@ void swap(int keep[], int a, int b){
     int temp=keep[a];
     keep[a]=keep[b];
     keep[b]=temp;
-    //printarr(temp);
+    printarr(keep);
 };
 
 int partition(int keep[], int low, int high){
     int pivot=keep[high];
     int i=low;
     for(int j=low; j<high; j++){
-        if(keep[j]<pivot){
+        if(keep[j]<=pivot){
             swap(keep, i, j);
             i++;
         }
