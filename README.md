@@ -1,7 +1,7 @@
 <br><br>
 
 <p align="center">
-<a href="https://github.com/alexisveryreal"><img width="180" src="./web/images/night.png" alt="night logo">
+<a href="https://github.com/alexisveryreal"><img width="fit" src="./web/images/night.jpg" alt="night logo">
 <br>
 
 </p>
@@ -52,5 +52,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* 
-Mr Cooper
+* Mr Cooper
