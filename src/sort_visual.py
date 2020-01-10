@@ -3,7 +3,7 @@ import sys
 
 
 @eel.expose
-def bubble_sort(A):
+def bubble_sort(A, loops):
     for i in range (0, len(A) - 1):
         done = True
         for j in range (0, len(A) - i - 1):
@@ -11,8 +11,9 @@ def bubble_sort(A):
                 A[j], A[j+1] = A[j+1], A[j]
                 done = False
         if done:
-            print("done")
             return
+        else:
+            loops += 1
         
 if __name__=="__main__":
     eel.init('web')

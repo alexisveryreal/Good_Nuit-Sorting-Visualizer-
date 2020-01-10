@@ -12,7 +12,7 @@
  let qSCalled = false;
  let curPivot, curHi, curLow
 
-
+ eel.expose(setup)
  function setup(){
 
      selType = createSelect();
@@ -40,6 +40,7 @@
      resetArray();
  }
 
+ eel.expose(draw);
  function draw(){
      background(0);
 
@@ -68,7 +69,9 @@
              //     }
              //     break;
              default:
-                 eel.bubble_sort(values)
+                 eel.bubble_sort(values, loops)
+                 if(loops == values.length) finished = true;
+                 console.log("TEST")
                  break; 
          }
      } else {
