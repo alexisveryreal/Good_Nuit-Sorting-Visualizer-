@@ -5,7 +5,7 @@ eel.init('web')
 
 @eel.expose
 def merge_sort(A):
-    merge_sort2(A, 0, len(A)-1)
+	merge_sort2(A, 0, len(A)-1)
 
 def merge_sort2(A, first, last):
 	if first < last:

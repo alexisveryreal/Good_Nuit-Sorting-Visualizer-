@@ -3,6 +3,7 @@ import copy
 import random
 
 size1 = 100
+span = 1000000
 
 
 #---Random---#
