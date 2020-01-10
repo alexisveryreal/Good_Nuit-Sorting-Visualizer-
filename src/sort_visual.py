@@ -1,7 +1,6 @@
 import eel
 import sys
 
-eel.init('web')
 
 @eel.expose
 def bubble_sort(A):
@@ -12,6 +11,9 @@ def bubble_sort(A):
                 A[j], A[j+1] = A[j+1], A[j]
                 done = False
         if done:
+            print("done")
             return
-
-eel.start('index.html') 
+        
+if __name__=="__main__":
+    eel.init('web')
+    eel.start('index.html') 

@@ -15,7 +15,7 @@
             let swaps = 0;
             let cycles = 1;
             let lines = false;
-            let numLines = 200;
+            let numLines = 5;
             let finished = false;
             let button;
             let selType, inpNum;
@@ -33,7 +33,7 @@
                 selType.option('Quick');
                 selType.option('Selection');
 
-                inpNum = createInput('200');
+                inpNum = createInput('5');
                 inpNum.position(10, 30);
                 inpNum.input(function() {
                     numLines = inpNum.value();
@@ -109,6 +109,8 @@
                 }
                 loops= 0;
                 swaps = 0;
+                finished = false;
+                qSCalled = false;
                 loop();
             }
         </script> 
