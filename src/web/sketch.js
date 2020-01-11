@@ -2,28 +2,28 @@
 
  let values = [];
  let loops = 0;
- let swaps = 0;
+ let swaps;
  let cycles = 1;
  let lines = false;
- let numLines = 5;
+ let numLines = 25;
  let finished = false;
  let button;
  let selType, inpNum;
  let qSCalled = false;
  let curPivot, curHi, curLow
 
- eel.expose(setup)
+
  function setup(){
 
      selType = createSelect();
      selType.position(10,10);
-     selType.option('Merge');
+    //  selType.option('Merge');
      selType.option('Bubble');
-     selType.option('Insertion');
-     selType.option('Quick');
+    //  selType.option('Insertion');
+    //  selType.option('Quick');
      selType.option('Selection');
 
-     inpNum = createInput('5');
+     inpNum = createInput('25');
      inpNum.position(10, 30);
      inpNum.input(function() {
          numLines = inpNum.value();
@@ -40,38 +40,29 @@
      resetArray();
  }
 
- eel.expose(draw);
  function draw(){
      background(0);
 
      if (!finished){
          switch(selType.value()){
-             // case 'Merge':
-             //     eel.merge_sort(values)();
-             //     qSCalled = false;
-             //     break;
-             // case 'Bubble':
-             //     eel.bubble_sort(values)();
-             //     qSCalled = false;
-             //     break;
-             // case 'Selection':
-             //     eel.selection_sort(values)();
-             //     qSCalled = false;
-             //     break;
-             // case 'Insertion':
-             //     eel.insertion_sort(values)();
-             //     qSCalled = false;
-             //     break;
-             // case 'Quick':
-             //     if(!qSCalled){
-             //         eel.quicksort(values, 0, values.length -1)();
-             //         qSCalled = true;
-             //     }
-             //     break;
+            //  case 'Merge':
+            //      break;
+             case 'Bubble':
+                 bubble_sort();
+                 qSCalled = false;
+                 break;
+             case 'Selection':
+                 selection_sort();
+                 qScalled = false;
+                 break;
+            //  case 'Insertion':
+               
+            //      break;
+            //  case 'Quick':
+                 
+            //      break;
              default:
-                 eel.bubble_sort(values, loops)
-                 if(loops == values.length) finished = true;
-                 console.log("TEST")
+                 bubble_sort();
                  break; 
          }
      } else {
@@ -93,6 +84,49 @@
          rect(location, height-values[i], width/numLines, height);
      }
  }
+
+ bubble_sort = function(){
+
+    if(swaps < values.length - loops - 1){
+        if(numLines >= 50) cycles = 10;
+        else if (numLines >= 200) cycles = 50;
+        else if (numLines >= 500) cycles = 100;
+
+        for(i = 0; i < cycles; i++){
+            let a = values[swaps];
+            let b = values[swaps+1];
+            if(a > b){
+                swap(values, swaps, swaps+1);
+            }
+            swaps++;
+        }
+    } else {
+        swaps = 0;
+        loops++;
+    }
+    if (loops == values.length) finished = true;
+ }
+
+ selection_sort = function(){
+    
+    //  for(i = 0; i < values.length - loops - 1; i++){
+    //      let a = values[i];
+    //      let b = values[i+1];
+    //      if(a > b){
+    //          swap(values, i, i+1);
+    //      }
+    //  }
+    //  if ( loops == values.length) finished = true;
+ }
+
+ swap = function (arr, a, b){
+     let temp = arr[a];
+     arr[a] = arr[b];
+     arr[b] = temp;
+ }
+
+
+
 
  resetArray = function(){
      console.log('resetting')
