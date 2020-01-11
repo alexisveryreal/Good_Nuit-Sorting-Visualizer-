@@ -10,7 +10,8 @@
  let button;
  let selType, inpNum;
  let qSCalled = false;
- let curPivot, curHi, curLow
+ let curPivot, curHi, curLow;
+ let m,l,r;
 
 
  function setup(){
@@ -20,7 +21,7 @@
     //  selType.option('Merge');
      selType.option('Bubble');
     //  selType.option('Insertion');
-    //  selType.option('Quick');
+     selType.option('Quick');
      selType.option('Selection');
 
      inpNum = createInput('25');
@@ -46,6 +47,8 @@
      if (!finished){
          switch(selType.value()){
             //  case 'Merge':
+            //      merge_sort(values);
+            //      qSCalled = false;
             //      break;
              case 'Bubble':
                  bubble_sort();
@@ -58,9 +61,12 @@
             //  case 'Insertion':
                
             //      break;
-            //  case 'Quick':
-                 
-            //      break;
+             case 'Quick':
+                 if(!qSCalled){
+                    quick_sort(values, 0, values.length -1);
+                    qSCalled = true;
+                 }
+                 break;
              default:
                  bubble_sort();
                  break; 
@@ -75,6 +81,18 @@
          let location = map(i, 0, values.length, 0, width);
          colorMode(RGB);
          switch(i) {
+             case curHi:
+                 stroke(0);
+                 fill(0,255,0);
+                 break;
+             case curLow:
+                 stroke(0);
+                 fill(0,0,255);
+                 break;
+             case curPivot:
+                 stoke(0);
+                 fill(255);
+                 break;
              default:
                  stroke(col);
                  fill(col);
@@ -107,22 +125,57 @@
     if (loops == values.length) finished = true;
  }
 
+
  selection_sort = function(){
-    
-    //  for(i = 0; i < values.length - loops - 1; i++){
-    //      let a = values[i];
-    //      let b = values[i+1];
-    //      if(a > b){
-    //          swap(values, i, i+1);
-    //      }
-    //  }
-    //  if ( loops == values.length) finished = true;
+     for(i = 0; i < values.length - loops - 1; i++){
+         let a = values[i];
+         let b = values[i+1];
+         if(a > b){
+             swap(values, i, i+1);
+         }
+     }
+    if ( loops == values.length) finished = true;
+ }
+
+ quick_sort = function (arr, left, right){
+    //timeout so we can see the fucking sort
+    setTimeout(() => {
+         //Best Case: no need to sort
+        if(left >= right)
+        {
+            return;
+        }
+        //pivot last element in subarray
+        let pivot = arr[right];
+
+        // "split" b/t items < pivot and items > pivot
+        let cnt = left;
+
+        //color variables so again, we can see things going on
+        curPivot = cnt;
+        curHi = right;
+        curLow = left;
+
+        //Traverse from LEFT to RIGHT
+        for(let i =left; i <= right; i++){
+            if(arr[i] <= pivot){
+                swap(arr, cnt, i);
+                cnt++;
+                
+            }
+        }
+
+        //cnt right now == pivot +1
+        // hence, cnt -2 for left side
+        quick_sort(arr, left, cnt-2);
+        quick_sort(arr,cnt, right);
+
+    }, 300);
  }
 
  swap = function (arr, a, b){
-     let temp = arr[a];
-     arr[a] = arr[b];
-     arr[b] = temp;
+    //instead of using temp variable pog
+    [arr[a], arr[b]] = [arr[b], arr[a]];
  }
 
 

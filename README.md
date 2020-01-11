@@ -10,24 +10,18 @@
 
 # Good_Nuit-Sort Visualizer
 Sorting Visualizer using Javascript p5js for visuals.
-With also the use of eel for running the logic behind scenes using Python.
 
 
 ### Prerequisites
 
 What things you need to install the software and how to install them
 
-Python Eel
-
-```
-pip install eel (in your terminal)
-import eel (in your python file)
-```
 
 p5.js
 
 ```
-<script src"https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.min.js"></script>
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/p5.sound.js"></script>
 
 inside the html file you are using
 ```
@@ -39,7 +33,6 @@ The source code of Good-Nuit can be found [here](./src/).
 ## Built With
 
 * [p5js](https://p5js.org/) - The web framework used
-* [Eel](https://github.com/samuelhwilliams/Eel) - Python Library
 
 
 ## Authors
